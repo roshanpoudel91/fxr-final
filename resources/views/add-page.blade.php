@@ -29,7 +29,8 @@
                 </div>
 
                 <!-- <input type="text" name="body_html" placeholder="HTML Body"/></br></br></br> -->
-                @include('html_body')
+                @include('body_html')
+                <button class="btn-primary" type="submit">Save</button>
             </div>
         </main>
     </form>

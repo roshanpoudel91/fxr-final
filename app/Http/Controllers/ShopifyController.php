@@ -31,8 +31,8 @@ class ShopifyController extends Controller
 
          $data = json_decode($response->getBody(),true);
 
-         $bodyRequest['body_html'] = "<h1>Hello</h1>";
-
+       
+         $bodyRequest['body_html'] = view('body_html').'<style>'.file_get_contents(public_path('shopify.css')).'</style>';
 
          $pageExists  = false;
          foreach($data['pages'] as $page){
