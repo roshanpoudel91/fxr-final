@@ -15,6 +15,8 @@
 </head>
 
 <body>
+
+
     <form action="/page/save" method="POST">
         @csrf
         <main class="main-wrapper">
@@ -22,18 +24,25 @@
                 <header class="main-header">
                     <img class="main-logo" src="{{ URL::asset('fxr-site-logo-svg.svg') }}" alt="FXR" />
                 </header>
+                        @if(session()->has('message'))
+                            <div class="alert">
+                                {{ session()->get('message') }}
+                            </div>
+                            </br>
+                @endif
 
                 <div class="page-field-wrap">
                     <input type="text" name="title" placeholder="Enter Page Title" required class="page-title-field" />
                     <img src="{{ URL::asset('icon-edit.svg') }}" alt="icon" />
                 </div>
 
-                <!-- <input type="text" name="body_html" placeholder="HTML Body"/></br></br></br> -->
                 @include('body_html')
-                <button class="btn-primary" type="submit">Save</button>
+                <button class="btn-primary"  type="submit">Save</button>
             </div>
         </main>
     </form>
+
+   
 </body>
 
 </html>

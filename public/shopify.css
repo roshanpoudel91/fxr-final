@@ -210,3 +210,9 @@ form {
         margin: 2.5rem 0 2rem;
     }
 }
+
+.alert {
+    padding: 20px;
+    background-color: green;
+    color: white;
+  }

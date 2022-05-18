@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
  use Illuminate\Http\Request as PostRequest;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class ShopifyController extends Controller
 {
@@ -50,7 +52,9 @@ class ShopifyController extends Controller
                 ]
               );
 
-                return "Page already exists. So updated with provided content.";
+                
+                Session::flash('message', "Page already exists. So updated with provided content.");
+                return Redirect::back();
                 break;
             }
          }
@@ -68,7 +72,10 @@ class ShopifyController extends Controller
             $data = json_decode($response->getBody(),true);
 
             if($response->getStatusCode() == 201){
-                return "Page created";
+               
+                Session::flash('message', "Page has been created");
+                return Redirect::back();
+
             }
             
          }
