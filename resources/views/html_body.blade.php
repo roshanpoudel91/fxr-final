@@ -10,12 +10,7 @@
 
 <h1 class="main-title">rpoudel91@gmail.com</h1>
 
-<p id="sampleText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-    industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it
-    to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-    containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.</p>
+<p id="sampleText">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled itto make a type specimen book. It has survived not only five centuries, but also the leap into electronictypesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
 <footer class="main-footer">
     <button class="btn-primary" type="submit">Save</button>
@@ -25,13 +20,12 @@
 
 <script>
 function startCount() {
+    event.preventDefault();
     let futureTime = 10;
 
     if (document.getElementById("javascript").innerHTML == "JavaScript!") {
 
         var x = setInterval(function() {
-
-            console.log(futureTime);
             document.getElementById("count").innerHTML = futureTime;
             futureTime = futureTime - 1;
 
@@ -39,7 +33,6 @@ function startCount() {
                 clearInterval(x);
                 //change every letter L and l to *
                 var oldStr = document.getElementById("sampleText").innerHTML;
-                console.log(oldStr);
                 setCookie("oldStr", oldStr, 1);
                 var newStr = oldStr.replace(/[l|L]/g, '<span style="color:red;">*</span>');
                 document.getElementById("sampleText").innerHTML = newStr;

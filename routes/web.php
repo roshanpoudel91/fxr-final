@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/',[ShopifyController::class, 'index']);
-Route::get('/page/add',[ShopifyController::class, 'addPage']);
+#Route::get('/',[ShopifyController::class, 'index']);
+Route::get('/',[ShopifyController::class, 'addPage']);
 Route::post('/page/save',[ShopifyController::class, 'savePage']);

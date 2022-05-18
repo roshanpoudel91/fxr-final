@@ -24,7 +24,7 @@
                 </header>
 
                 <div class="page-field-wrap">
-                    <input type="text" name="title" placeholder="Enter Page Title" class="page-title-field" />
+                    <input type="text" name="title" placeholder="Enter Page Title" required class="page-title-field" />
                     <img src="{{ URL::asset('icon-edit.svg') }}" alt="icon" />
                 </div>
 
